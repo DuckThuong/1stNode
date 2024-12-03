@@ -1,7 +1,6 @@
 import express from "express";
 import cors from "cors";
 import configViewEngine from "./configs/viewEngine";
-import WebRouter from "./router/web";
 import ApiRouter from "./router/api";
 require("dotenv").config();
 const app = express();
@@ -14,7 +13,6 @@ app.use(cors());
 configViewEngine(app);
 
 //Router
-WebRouter(app);
 app.use(ApiRouter);
 
 //App landing
