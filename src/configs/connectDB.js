@@ -1,19 +1,7 @@
-const mysql = require("mysql2");
+const { Sequelize } = require("sequelize");
 
-const connection = mysql.createConnection({
+// Option 3: Passing parameters separately (other dialects)
+const sequelize = new Sequelize("database", "username", "password", {
   host: "localhost",
-  user: "root",
-  password: "password",
-  database: "database_name",
+  dialect: "mysql",
 });
-
-connection.connect((err) => {
-  if (err) {
-    console.error("Error connecting to MySQL:", err);
-    return;
-  }
-  console.log("Connected to MySQL!");
-});
-
-// Đóng kết nối
-connection.end();

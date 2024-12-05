@@ -1,6 +1,4 @@
-
-
-export const getUsers = async (req, res) => {
+export const getAllUser = async (req, res) => {
   try {
     const users = await getUsersFromDatabase();
     if (!users || users.length === 0) {
@@ -15,7 +13,23 @@ export const getUsers = async (req, res) => {
 
 async function getUsersFromDatabase() {
   return [
-    { name: "User 1", email: "user1@example.com" },
-    { name: "User 2", email: "user2@example.com" },
+    {
+      username: "admin",
+      email: "admin@gmail.com",
+      password: "123456a@",
+      verifyCode: "11111111",
+    },
+    {
+      username: "TuanAnh",
+      email: "nguyentuananh-it@gmail.com",
+      password: "nguyentuananh-it",
+      verifyCode: "22222222",
+    },
+    {
+      username: "KhanhHung",
+      email: "KhanhHungTran@gmail.com",
+      password: "KhanhHungTran",
+      verifyCode: "33333333",
+    },
   ];
 }
